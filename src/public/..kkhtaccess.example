@@ -1,0 +1,16 @@
+# Traitement toutes accès au dossier racine, définition du fichier qui est l'index.php
+# DirectoryIndex /router.php 
+
+# Traitement toutes demandes aux fichiers inexistants dans le dossier racine. Cette directive definie ce qu'il faut faire lors d'un 404 not found
+# FallbackResource /router.php
+
+# RewriteEngine On
+# RewriteCond %{REQUEST_URI} "(.*)/$"
+# RewriteCond "%{REQUEST_FILENAME}" "(.*)/.*$"
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^ $1 [L,R=30]
+
+# ErrorDocument 500 "/router.php"
+# ErrorDocument 401 "/router.php"
+# ErrorDocument 404 "/router.php"
+# ErrorDocument 403 "/router.php"
